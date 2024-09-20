@@ -2,13 +2,19 @@ let valores = [];
 let idCount = 1;
 
 function addValor(){
-  let valorInput = document.getElementById("valorInput").value;
+  const valorInput = document.getElementById("valorInput").value;
   
-  if( valorInput){
-    valores.push({id: idCount++, nome:valorInput});
+  if( valorInput.trim() !==""){
+    constnewListItem = document.createElement('li');
+
+    newListItem.textContent = valorInput;
+
+    valores.push({ id: idCount++, valor: valorInput });
+
+    document.getElementById('listValores').appendChild(newListItem);
     document.getElementById("valorInput").value="";
   }
   else{
-    alert("Porfavor insira um valor")
+    alert("Porfavor insira um valor");
   }
 }
